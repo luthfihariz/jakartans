@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jakartans.ac.SearchActivity" >
+
+    <item
+        android:id="@+id/item_info"
+		android:title="@string/info"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_launcher"/>
+    
+     <item
+        android:id="@+id/item_update_info"
+        android:title="@string/update_info"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_launcher"/>
+
+</menu>
