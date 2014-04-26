@@ -29,7 +29,7 @@ public class Api {
 	private static String STATUS_API = HOST_NAME_API + "/status/new";
 
 	public static JSONObject searchTrayek(String from, String to) throws IOException {
-		return Api.getHttp(SEARCH_API + "/" + from + "/" + to, null);
+		return Api.getHttp(SEARCH_API + "/" + from.replace(" ", "%20") + "/" + to.replace(" ", "%20"), null);
 	}
 
 	public static JSONObject updateStatus(int userId, String trayekId, String status, int trafficRate,
@@ -45,9 +45,9 @@ public class Api {
 		params.put("longitude", String.valueOf(longitude));
 		return Api.postHttp(STATUS_API, params);
 	}
-	
-	public static JSONObject getUserProfile(int userId) throws IOException{
-		return Api.getHttp(USERS_API+"/"+userId,null);
+
+	public static JSONObject getUserProfile(int userId) throws IOException {
+		return Api.getHttp(USERS_API + "/" + userId, null);
 	}
 
 	public static JSONObject loginWithFacebook(String username, String email, String birthdate, String city,

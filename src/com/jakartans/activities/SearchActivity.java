@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,33 +60,22 @@ public class SearchActivity extends SherlockActivity {
 		searchBtn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View v) {				
+			public void onClick(View v) {
+				goToTrayekList(fromEdit.getText().toString(), toEdit.getText().toString());
 			}
 		});
 	}
 
-	private class SearchTask extends AsyncTask<String, Void, JSONObject>{
-
-		@Override
-		protected JSONObject doInBackground(String... params) {
-			try {
-				return Api.searchTrayek(params[0], params[1]);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
-		@Override
-		protected void onPostExecute(JSONObject result) {
-			super.onPostExecute(result);
-		}
-		
+	private void goToTrayekList(String from, String to){
+		Intent intent = new Intent(this, TrayekListActivity.class);
+		intent.putExtra("from", from);
+		intent.putExtra("to", to);
+		startActivity(intent);
 	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getSupportMenuInflater().inflate(R.menu.search, menu);
+		getSupportMenuInflater().inflate(R.menu.menu_profil_and_update_info, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -114,9 +104,7 @@ public class SearchActivity extends SherlockActivity {
 							Helper.toastShort(SearchActivity.this, "crot!");
 						}
 					});
-
 			break;
-
 		default:
 			break;
 		}
