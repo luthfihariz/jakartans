@@ -1,26 +1,26 @@
 package com.jakartans.activities;
 
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.jakartans.R;
 
 import android.os.Bundle;
 
-public class TrayekMapActivity extends SherlockActivity{
+public class TrayekMapActivity extends SherlockFragmentActivity{
 				
+	private GoogleMap googleMap;
+	private SupportMapFragment supportMapFragment;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trayek_map);
 		
-//		googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.trayek_map))
-//	        .getMap();
-//		
-//	    // Move the camera instantly to hamburg with a zoom of 15.
-//	    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HAMBURG, 15));
-//
-//	    // Zoom in, animating the camera.
-//	    googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+		supportMapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.trayek_map);
+		googleMap = supportMapFragment.getMap();
+		
+		googleMap.setMyLocationEnabled(true);
 
 	}
 
