@@ -1,19 +1,15 @@
 package com.jakartans.activities;
 
-import com.actionbarsherlock.app.SherlockActivity;
-
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+
+import com.actionbarsherlock.app.SherlockActivity;
 
 public class TrayekFullActivity extends SherlockActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_update_status);
+		//setContentView(R.layout.activity_update_status);
 	}
 
 	/*@Override

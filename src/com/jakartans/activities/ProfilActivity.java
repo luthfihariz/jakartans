@@ -1,22 +1,15 @@
 package com.jakartans.activities;
 
-import com.actionbarsherlock.app.SherlockActivity;
-
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+
+import com.actionbarsherlock.app.SherlockActivity;
 
 public class ProfilActivity extends SherlockActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_profil);
+		//setContentView(R.layout.activity_profil);
 
 	}
 
