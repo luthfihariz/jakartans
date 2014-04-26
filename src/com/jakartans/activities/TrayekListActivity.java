@@ -1,36 +1,38 @@
 package com.jakartans.activities;
 
-import android.content.DialogInterface.OnClickListener;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.jakartans.R;
+import com.jakartans.activities.SearchActivity.ViewHolder;
+import com.luthfihariz.utilities.AlertDialogManager;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.os.Build;
 
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-import com.jakartans.R;
-import com.luthfihariz.utilities.AlertDialogManager;
-
-public class SearchActivity extends SherlockActivity {
+public class TrayekListActivity extends SherlockActivity {
 
 	AlertDialogManager alertDialogManager;
-	LayoutInflater layoutInflater;
 	View view;
-	
+	LayoutInflater layoutInflater;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_search);
+		setContentView(R.layout.activity_trayek_list);
 
-		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
 		getSupportMenuInflater().inflate(R.menu.menu_profil_and_update_info, menu);
-		return super.onCreateOptionsMenu(menu);
+		return true;
 	}
 
 	@Override
@@ -74,5 +76,4 @@ public class SearchActivity extends SherlockActivity {
 		EditText etNameTrayek;
 		EditText etUpdateInfo;
 	}
-
 }
