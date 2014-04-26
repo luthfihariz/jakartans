@@ -1,94 +1,121 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:orientation="vertical"
-    tools:context="com.jakartans.activities.SearchActivity" >
-    
-    <EditText 
-        android:id="@+id/et_name_trayek"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="@string/name_trayek"/>
-    
-    <TextView 
-        android:id="@+id/tv_jamming"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/jamming"
-        android:hint="@string/jamming"/>
-    
-    <SeekBar 
-        android:id="@+id/seek_jamming"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:max="2"
-        android:progress="0"
-       />
-    
-    <TextView 
-        android:id="@+id/tv_jamming_status"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/jamming"
-        android:hint="@string/jamming"/>
-    
-    <TextView 
-        android:id="@+id/tv_bus"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/fluent"
-        android:hint="@string/jamming"/>
-    
-    <SeekBar 
-        android:id="@+id/seek_bus"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:max="2"
-        android:progress="0"/>
-    
-    <TextView 
-        android:id="@+id/tv_bus_status"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/fluent"
-        android:hint="@string/jamming"/>
-    
-    <TextView 
-        android:id="@+id/tv_availability"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/availability"
-        android:hint="@string/jamming"/>
-    
-    <SeekBar 
-        android:id="@+id/seek_availability"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:max="2"
-        android:progress="0"/>
-    
-    <TextView 
-        android:id="@+id/tv_availability_status"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/availability"
-        android:hint="@string/jamming"/>
-    
-    <EditText 
-        android:id="@+id/et_update_info"
-        android:layout_marginTop="10dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="@string/update_status"/>
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:padding="15dp"
+	tools:context="com.jakartans.activities.SearchActivity" >
+
+	<AutoCompleteTextView
+		android:id="@+id/et_name_trayek"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:layout_gravity="center"
+		android:hint="@string/name_trayek" />
+
+	<SeekBar
+		android:id="@+id/seek_jamming"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:max="2"
+		android:progress="0" />
+
+	<LinearLayout
+		android:id="@+id/jam_status_container"
+		android:layout_width="fill_parent"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+		android:layout_height="wrap_content" >
+
+		<ImageView
+			android:id="@+id/iv_jam_status"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:src="@drawable/ic_road_conditions_green" />
+
+		<TextView
+			android:id="@+id/tv_jamming_status"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="10dp"
+			android:textColor="#777"
+			android:text="Lancar"
+			android:hint="@string/jamming" />
+	</LinearLayout>
+
+	<SeekBar
+		android:id="@+id/seek_bus"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:max="2"
+		android:progress="0" />
+
+	<LinearLayout
+		android:id="@+id/bus_status_container"
+		android:layout_width="fill_parent"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+		android:layout_height="wrap_content" >
+
+		<ImageView
+			android:id="@+id/iv_bus_status"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:src="@drawable/ic_passenger_density_green" />
+
+		<TextView
+			android:id="@+id/tv_bus_status"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="10dp"
+			android:textColor="#777"
+			android:text="Cenderung Kosong"
+			android:hint="@string/jamming" />
+
+	</LinearLayout>
+
+	<SeekBar
+		android:id="@+id/seek_availability"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:max="2"
+		android:progress="0" />
+
+	<LinearLayout
+		android:id="@+id/avail_status_container"
+		android:layout_width="fill_parent"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+		android:layout_height="wrap_content" >
+
+		<ImageView
+			android:id="@+id/iv_avail_status"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:src="@drawable/ic_vehicle_availability_green" />
+
+		<TextView
+			android:id="@+id/tv_avail_status"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="10dp"
+			android:textColor="#777"
+			android:text="Cenderung Banyak"
+			android:hint="@string/jamming" />
+
+	</LinearLayout>
+
+	<EditText
+		android:id="@+id/et_update_info"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:maxLength="200"
+		android:layout_marginTop="10dp"
+		android:hint="@string/update_status" />
 
 </LinearLayout>

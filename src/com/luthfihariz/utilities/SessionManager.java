@@ -27,6 +27,10 @@ public class SessionManager {
 		editor.commit();
 	}	
 	
+	public int getMemberId(){
+		return pref.getInt(KEY_USERID, 0);
+	}
+	
 	public boolean isLoggedIn(){
 		return pref.getBoolean(KEY_IS_LOGGED_IN, false);
 	}

@@ -32,15 +32,15 @@ public class Api {
 		return Api.getHttp(SEARCH_API + "/" + from.replace(" ", "%20") + "/" + to.replace(" ", "%20"), null);
 	}
 
-	public static JSONObject updateStatus(int userId, String trayekId, String status, int trafficRate,
-			int busRate, int busAvailRate, double latitude, double longitude) throws IOException {
+	public static JSONObject updateStatus(int userId, String trayekId, String status, String trafficRate,
+			String busRate, String busAvailRate, double latitude, double longitude) throws IOException {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("user_id", String.valueOf(userId));
-		params.put("trayek_id", String.valueOf(userId));
+		params.put("trayek_id", String.valueOf(trayekId));
 		params.put("status", status);
-		params.put("trafficRate", String.valueOf(trafficRate));
-		params.put("busRate", String.valueOf(trafficRate));
-		params.put("busAvailRate", String.valueOf(trafficRate));
+		params.put("traffic_rate", String.valueOf(trafficRate));
+		params.put("bus_rate", String.valueOf(busRate));
+		params.put("bus_avail_rate", String.valueOf(busAvailRate));
 		params.put("latitude", String.valueOf(latitude));
 		params.put("longitude", String.valueOf(longitude));
 		return Api.postHttp(STATUS_API, params);

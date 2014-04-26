@@ -1,6 +1,5 @@
 package com.luthfihariz.utilities;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
@@ -13,19 +12,17 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
-import org.xml.sax.InputSource;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Bitmap.Config;
-import android.graphics.PorterDuff.Mode;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -94,6 +91,32 @@ public class Helper {
 		String json = null;
 		try{
 			InputStream is = context.getAssets().open("routes.json");
+			int size = is.available();
+			byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+            routeJson = new JSONArray(json);
+            
+            for (int i = 0; i < routeJson.length(); i++) {
+    			String route = routeJson.get(i).toString();
+    			Helper.log("route : "+route);
+    			routes.add(route);
+    		}
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}				
+		
+		return routes;
+	}
+	
+	public static ArrayList<String> getNoRoutes(Context context){
+		ArrayList<String> routes = new ArrayList<String>();
+		JSONArray routeJson;
+		String json = null;
+		try{
+			InputStream is = context.getAssets().open("no_trayek.json");
 			int size = is.available();
 			byte[] buffer = new byte[size];
             is.read(buffer);
