@@ -19,31 +19,47 @@ import org.json.JSONObject;
 
 public class Api {
 
-	private static String DOMAIN = "http://192.168.1.185";
-	private static String HOST_NAME = DOMAIN + "/sekitar";
+	private static String DOMAIN = "http://172.16.6.15/";
+	private static String HOST_NAME = DOMAIN + "/hackjack";
 	private static String HOST_NAME_API = HOST_NAME + "/api";
-	
 	private static String USERS_API = HOST_NAME_API + "/users";
 	private static String REGISTER_API = USERS_API + "/register";
 	private static String LOGIN_API = USERS_API + "/login";
-	
-	public static JSONObject loginWithFacebook(
-			String username, String email, String birthdate, 
-			String city, String country, String gender, 
-			String android_os, String photo_uri) throws IOException{
+	private static String SEARCH_API = HOST_NAME_API + "/search/rate";
+	private static String STATUS_API = HOST_NAME_API + "/status/new";
+
+	public static JSONObject searchTrayek(String from, String to) throws IOException {
+		return Api.getHttp(SEARCH_API + "/" + from + "/" + to, null);
+	}
+
+	public static JSONObject updateStatus(int userId, String trayekId, String status, int trafficRate,
+			int busRate, int busAvailRate, double latitude, double longitude) throws IOException {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("username", username);
-		params.put("email", email);		
-		params.put("birthdate", birthdate);
-		params.put("city", city);
-		params.put("country", country);
-		params.put("gender", gender);
-		params.put("android_os", android_os);
-		params.put("photo_uri", photo_uri);
-		params.put("is_fb_login", "1");
-		return Api.postHttp(REGISTER_API, params);
+		params.put("user_id", String.valueOf(userId));
+		params.put("trayek_id", String.valueOf(userId));
+		params.put("status", status);
+		params.put("trafficRate", String.valueOf(trafficRate));
+		params.put("busRate", String.valueOf(trafficRate));
+		params.put("busAvailRate", String.valueOf(trafficRate));
+		params.put("latitude", String.valueOf(latitude));
+		params.put("longitude", String.valueOf(longitude));
+		return Api.postHttp(STATUS_API, params);
 	}
 	
+	public static JSONObject getUserProfile(int userId) throws IOException{
+		return Api.getHttp(USERS_API+"/"+userId,null);
+	}
+
+	public static JSONObject loginWithFacebook(String username, String email, String birthdate, String city,
+			String country, String gender, String android_os, String photo_uri) throws IOException {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("username", username);
+		params.put("email", email);
+		params.put("android_os", android_os);
+		params.put("photo_uri", photo_uri);
+		return Api.postHttp(REGISTER_API, params);
+	}
+
 	private static String getQueryString(Map<String, String> params) {
 		StringBuilder stringBuilder = new StringBuilder();
 		Iterator<Entry<String, String>> iterator = params.entrySet().iterator();
