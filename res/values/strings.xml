@@ -33,5 +33,6 @@
     <string name="title_activity_trayek_list">TrayekListActivity</string>
     <string name="title_activity_profil">ProfilActivity</string>
     <string name="title_activity_update_status">UpdateStatusActivity</string>
+    <string name="title_activity_trayek_map">TrayekMapActivity</string>
 
 </resources>

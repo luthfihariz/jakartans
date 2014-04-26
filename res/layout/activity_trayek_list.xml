@@ -1,16 +1,15 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:overScrollMode="always"
-    tools:context="com.jakartans.activities.TrayekListActivity"
-    tools:ignore="MergeRootFrame">
+    android:orientation="vertical"
+    tools:context="com.jakartans.activities.TrayekListActivity">
     
     <ListView 
         android:id="@+id/lv_trayek"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
     
-</ScrollView>
+</LinearLayout>
 
