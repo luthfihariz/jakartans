@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
@@ -21,7 +23,7 @@ import com.luthfihariz.utilities.Helper;
 import com.luthfihariz.utilities.OnAsyncTaskCompleted;
 import com.luthfihariz.utilities.SessionManager;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends SherlockActivity {
 
 	private LoginButton fbLoginButton;
 	private UiLifecycleHelper uiHelper;
@@ -37,6 +39,10 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
+		actionBar.setDisplayShowTitleEnabled(false);
 		
 		session = new SessionManager(this);
 		//session.clearSession();
@@ -57,6 +63,8 @@ public class LoginActivity extends Activity {
 		if (state.isOpened()) {
 			Helper.log("Logged in...");
 			requestForUserProfile(session);
+		}else{
+			Helper.log("state not open");
 		}
 	}
 
@@ -66,6 +74,8 @@ public class LoginActivity extends Activity {
 			public void onCompleted(GraphUser user, Response response) {
 				if (response != null) {
 					sendUserProfile(user);
+				}else{
+					Helper.log("response null");
 				}
 			}
 		});

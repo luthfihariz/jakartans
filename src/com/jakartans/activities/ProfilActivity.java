@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Window;
 import com.jakartans.R;
@@ -35,6 +36,10 @@ public class ProfilActivity extends SherlockActivity {
 		setContentView(R.layout.activity_profil);
 		setSupportProgressBarIndeterminateVisibility(true);
 
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
+		actionBar.setDisplayShowTitleEnabled(false);
+		
 		pointView = (TextView) findViewById(R.id.tv_point);
 		statusList = (ListView) findViewById(R.id.lv_history_user);
 		

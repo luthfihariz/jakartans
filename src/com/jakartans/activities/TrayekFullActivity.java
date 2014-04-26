@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -48,6 +49,10 @@ public class TrayekFullActivity extends SherlockActivity {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_trayek_full);
 		setSupportProgressBarIndeterminateVisibility(true);
+		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
+		actionBar.setDisplayShowTitleEnabled(false);
 
 		tvJenisTrayek = (TextView) findViewById(R.id.tv_username);
 		tvNamaTrayek = (TextView) findViewById(R.id.tv_status);

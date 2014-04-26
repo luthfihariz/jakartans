@@ -7,8 +7,8 @@
 
 	<ImageView
 		android:id="@+id/iv_trayek"
-		android:layout_width="30dp"
-		android:layout_height="30dp"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
 		android:contentDescription="@string/hello_world"
 		android:src="@drawable/ic_jakartans" />
 
@@ -22,6 +22,7 @@
 			android:id="@+id/ll_line_1"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp"
 			android:orientation="horizontal" >
 
 			<TextView
@@ -30,7 +31,7 @@
 				android:layout_height="wrap_content"
 				android:layout_margin="3dp"
 				android:text="@string/hello_world"
-				android:textSize="16sp"
+				android:textSize="18sp"
 				android:textStyle="bold" />
 
 			<TextView
@@ -47,6 +48,7 @@
 			android:id="@+id/ll_line_2"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp"
 			android:orientation="horizontal" >
 
 			<TextView
@@ -61,10 +63,11 @@
 			android:id="@+id/ll_line_3"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
+			android:layout_marginLeft="5dp"
 			android:orientation="horizontal" >
 
 			<ImageView
-				android:id="@+id/iv_fluent"
+				android:id="@+id/iv_jam"
 				android:layout_width="30dp"
 				android:layout_height="30dp"
 				android:contentDescription="@string/hello_world"

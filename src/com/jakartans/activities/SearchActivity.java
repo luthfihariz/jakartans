@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -49,6 +50,10 @@ public class SearchActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
+		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
+		actionBar.setDisplayShowTitleEnabled(false);
 
 		fromEdit = (AutoCompleteTextView) findViewById(R.id.et_from);
 		toEdit = (AutoCompleteTextView) findViewById(R.id.et_destination);

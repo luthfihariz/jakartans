@@ -59,7 +59,7 @@ public class TrayekListAdapter extends BaseAdapter implements OnItemClickListene
 			holder.ruteTrayek = (TextView) view.findViewById(R.id.tv_status);
 			holder.overallRating = (TextView) view.findViewById(R.id.tv_point);
 			holder.iconType = (ImageView) view.findViewById(R.id.iv_trayek);
-			holder.iconTrafficRate = (ImageView) view.findViewById(R.id.iv_fluent);
+			holder.iconTrafficRate = (ImageView) view.findViewById(R.id.iv_jam);
 			holder.iconBusRate = (ImageView) view.findViewById(R.id.iv_avail);
 			holder.iconBusAvailRate = (ImageView) view.findViewById(R.id.iv_bus);
 			view.setTag(holder);

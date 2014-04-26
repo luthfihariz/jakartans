@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -46,6 +47,10 @@ public class TrayekListActivity extends SherlockActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trayek_list);
 
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
+		actionBar.setDisplayShowTitleEnabled(false);
+		
 		from = getIntent().getStringExtra("from");
 		to = getIntent().getStringExtra("to");
 
@@ -115,7 +120,7 @@ public class TrayekListActivity extends SherlockActivity {
 
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		getSupportMenuInflater().inflate(R.menu.menu_profil_and_update_info, menu);
@@ -155,7 +160,7 @@ public class TrayekListActivity extends SherlockActivity {
 			break;
 		}
 		return true;
-	}
+	}*/
 
 	public class ViewHolder {
 		SeekBar seekBarJamming;
