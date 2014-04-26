@@ -46,16 +46,19 @@ public class ProfilHistoryAdapter extends BaseAdapter {
 		if (view == null) {
 			holder = new ViewHolder();
 			view = inflater.inflate(R.layout.row_trayek_full, null);
-			holder.username = (TextView) view.findViewById(R.id.tv_name_trayek);
-			holder.status = (TextView) view.findViewById(R.id.tv_rute_trayek);
-			holder.place = (TextView) view.findViewById(R.id.tv_no_trayek);
+			holder.username = (TextView) view.findViewById(R.id.tv_username);
+			holder.status = (TextView) view.findViewById(R.id.tv_status);
+			holder.place = (TextView) view.findViewById(R.id.tv_place);
+			holder.time = (TextView) view.findViewById(R.id.tv_time);
 			holder.iconType = (ImageView) view.findViewById(R.id.iv_trayek);
 			view.setTag(holder);
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
 		
-		holder.username.setText(status.getUser().getUsername());
+		holder.iconType.setVisibility(View.GONE);
+		holder.place.setVisibility(View.GONE);
+		holder.username.setText("For "+status.getUser().getUsername());
 		holder.status.setText(status.getStatus());
 		// holder.place.setText(null); // place
 		holder.time.setText(status.getTimeStampDate());

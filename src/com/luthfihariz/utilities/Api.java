@@ -25,6 +25,7 @@ public class Api {
 	private static String USERS_API = HOST_NAME_API + "/users";
 	private static String REGISTER_API = USERS_API + "/register";
 	private static String LOGIN_API = USERS_API + "/login";
+	private static String ROUTE_API = HOST_NAME_API + "/route";
 	private static String SEARCH_API = HOST_NAME_API + "/search/rate";
 	private static String STATUS_API = HOST_NAME_API + "/status/new";
 
@@ -48,6 +49,10 @@ public class Api {
 
 	public static JSONObject getUserProfile(int userId) throws IOException {
 		return Api.getHttp(USERS_API + "/" + userId, null);
+	}
+	
+	public static JSONObject getSingleRoute(String hackJackId) throws IOException{
+		return Api.getHttp(ROUTE_API+"/"+hackJackId, null);
 	}
 
 	public static JSONObject loginWithFacebook(String username, String email, String birthdate, String city,

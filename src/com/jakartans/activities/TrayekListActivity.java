@@ -105,6 +105,7 @@ public class TrayekListActivity extends SherlockActivity {
 					
 					TrayekListAdapter adapter = new TrayekListAdapter(TrayekListActivity.this, trayeks);
 					trayekList.setAdapter(adapter);
+					trayekList.setOnItemClickListener(adapter);
 
 				} catch (JSONException e) {
 					e.printStackTrace();

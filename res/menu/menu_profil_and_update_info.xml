@@ -7,12 +7,12 @@
         android:id="@+id/item_info"
 		android:title="@string/info"
         android:showAsAction="always"
-        android:icon="@drawable/ic_jakartans"/>
+        android:icon="@drawable/ic_profile"/>
     
      <item
         android:id="@+id/item_update_info"
         android:title="@string/update_info"
         android:showAsAction="always"
-        android:icon="@drawable/ic_jakartans"/>
+        android:icon="@drawable/ic_update_status"/>
 
 </menu>

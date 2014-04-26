@@ -45,9 +45,9 @@ public class TrayekFullAdapter extends BaseAdapter {
 		if (view == null) {
 			holder = new ViewHolder();
 			view = inflater.inflate(R.layout.row_trayek_full, null);
-			holder.username = (TextView) view.findViewById(R.id.tv_name_trayek);
-			holder.status = (TextView) view.findViewById(R.id.tv_no_trayek);
-			holder.place = (TextView) view.findViewById(R.id.tv_rute_trayek);
+			holder.username = (TextView) view.findViewById(R.id.tv_username);
+			holder.status = (TextView) view.findViewById(R.id.tv_status);
+			holder.place = (TextView) view.findViewById(R.id.tv_place);
 			holder.time = (TextView) view.findViewById(R.id.tv_time);
 			view.setTag(holder);
 		
@@ -57,7 +57,7 @@ public class TrayekFullAdapter extends BaseAdapter {
 		
 		holder.username.setText(status.getUser().getUsername()); // username
 		holder.status.setText(status.getStatus());
-		//holder.ruteTrayek.setText(null); // place
+		holder.place.setText(" at Jakarta"); // place
 		holder.time.setText(status.getTimeStampDate());
 		return view;
 	}

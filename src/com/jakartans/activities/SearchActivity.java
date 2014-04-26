@@ -87,6 +87,7 @@ public class SearchActivity extends SherlockActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.item_info:
+			toProfileActivity();
 			break;
 		case R.id.item_update_info:
 			showUpdateInformation();
@@ -95,6 +96,11 @@ public class SearchActivity extends SherlockActivity {
 			break;
 		}
 		return true;
+	}
+
+	private void toProfileActivity() {
+		Intent intent = new Intent(this, ProfilActivity.class);
+		startActivity(intent);
 	}
 
 	private void showUpdateInformation() {

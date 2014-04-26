@@ -7,6 +7,6 @@
         android:id="@+id/item_map"
 		android:title="@string/info"
         android:showAsAction="always"
-        android:icon="@drawable/ic_jakartans"/>
+        android:icon="@drawable/ic_maps"/>
 
 </menu>

@@ -6,7 +6,7 @@ import com.jakartans.R;
 import android.os.Bundle;
 
 public class TrayekMapActivity extends SherlockActivity{
-			
+				
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
