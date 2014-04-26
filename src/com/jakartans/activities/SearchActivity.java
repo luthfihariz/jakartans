@@ -52,7 +52,7 @@ public class SearchActivity extends SherlockActivity {
 				viewHolder.seekBarJamming = (SeekBar)view.findViewById(R.id.seek_jamming);
 				viewHolder.etUpdateInfo = (EditText)view.findViewById(R.id.et_update_info);
 				
-				alertDialogManager.showDialog(SearchActivity.this, "Perbaruhi Status",view,);
+				//alertDialogManager.showDialog(SearchActivity.this, "Perbaruhi Status",view,);
 				
 				view.setTag(viewHolder);
 			} else {
