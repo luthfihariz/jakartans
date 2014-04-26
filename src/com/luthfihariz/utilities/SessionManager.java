@@ -25,7 +25,7 @@ public class SessionManager {
 		editor.putInt(KEY_USERID, id);
 		editor.putString(KEY_USERNAME, username);
 		editor.commit();
-	}
+	}	
 	
 	public boolean isLoggedIn(){
 		return pref.getBoolean(KEY_IS_LOGGED_IN, false);
@@ -33,6 +33,12 @@ public class SessionManager {
 	
 	public String getUsername(){
 		return pref.getString(KEY_USERNAME, "");
+	}
+	
+	public void clearSession(){
+		Helper.log("clear gudpoin session");
+		editor.clear();
+		editor.commit();
 	}
 	
 }

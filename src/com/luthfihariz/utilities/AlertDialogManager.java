@@ -43,11 +43,11 @@ public class AlertDialogManager {
 		alertDialog.show();
 	}
 	
-	public void showDialog(Context context, String title, String message, View customView,
+	public void showDialog(Context context, String title, View customView,
 			DialogInterface.OnClickListener positiveButtonListener) {
 		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
 		alertDialog.setTitle(title);
-		alertDialog.setMessage(Html.fromHtml(message));
+		alertDialog.setView(customView);
 		alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "UPDATE",
 				positiveButtonListener);		
 		alertDialog.show();

@@ -19,11 +19,13 @@ import com.jakartans.R;
 import com.jakartans.sync.LoginWithFacebookTask;
 import com.luthfihariz.utilities.Helper;
 import com.luthfihariz.utilities.OnAsyncTaskCompleted;
+import com.luthfihariz.utilities.SessionManager;
 
 public class LoginActivity extends Activity {
 
 	private LoginButton fbLoginButton;
 	private UiLifecycleHelper uiHelper;
+	private SessionManager session;
 
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 		@Override
@@ -35,6 +37,12 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		session = new SessionManager(this);
+		session.clearSession();
+		if (session.isLoggedIn())
+			gotoSearchActivity();
+
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
 
@@ -64,10 +72,11 @@ public class LoginActivity extends Activity {
 		meRequest.executeAsync();
 	}
 
-	private void sendUserProfile(GraphUser user) {
+	private void sendUserProfile(final GraphUser user) {
 		String city = "", country = "";
 		try {
-			String[] hometown = user.getInnerJSONObject().getJSONObject("hometown").getString("name").split(",");
+			String[] hometown = user.getInnerJSONObject().getJSONObject("hometown").getString("name")
+					.split(",");
 			city = hometown[0].trim();
 			country = hometown[1].trim();
 		} catch (JSONException e) {
@@ -79,20 +88,15 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onCompleted(boolean status, Object... objects) {
 				if (status) {
-					Helper.log("user registered.");
+					Helper.log("user registered. id :" + (Integer) objects[0]);
+					session.createSession((Integer) objects[0], user.getUsername());
+					gotoSearchActivity();
 				}
 			}
 		});
-		
-		loginTask.execute(
-				user.getUsername(), 
-				user.getProperty("email").toString(), 
-				user.getBirthday(), 
-				city,
-				country, 
-				user.getProperty("gender").toString(), 
-				"4.0", 
-				"");
+
+		loginTask.execute(user.getUsername(), user.getProperty("email").toString(), user.getBirthday(), city,
+				country, user.getProperty("gender").toString(), "4.0", "");
 	}
 
 	@Override
@@ -125,4 +129,9 @@ public class LoginActivity extends Activity {
 		uiHelper.onSaveInstanceState(outState);
 	}
 
+	private void gotoSearchActivity() {		
+		Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+		finish();
+		startActivity(intent);
+	}
 }

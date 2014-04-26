@@ -8,9 +8,11 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.xml.sax.InputSource;
 
@@ -86,8 +88,9 @@ public class Helper {
 		return timeString;
 	}
 	
-	public static JSONObject getAllRoutes(Context context){
-		JSONObject routeJson;
+	public static ArrayList<String> getAllRoutes(Context context){
+		ArrayList<String> routes = new ArrayList<String>();
+		JSONArray routeJson;
 		String json = null;
 		try{
 			InputStream is = context.getAssets().open("routes.json");
@@ -96,12 +99,19 @@ public class Helper {
             is.read(buffer);
             is.close();
             json = new String(buffer, "UTF-8");
-            routeJson = new JSONObject(json);
+            routeJson = new JSONArray(json);
+            
+            for (int i = 0; i < routeJson.length(); i++) {
+    			String route = routeJson.get(i).toString();
+    			Helper.log("route : "+route);
+    			routes.add(route);
+    		}
 		}catch(Exception ex){
 			ex.printStackTrace();
 			return null;
-		}
-		return routeJson;
+		}				
+		
+		return routes;
 	}
 
 	public static String md5hash(String string) {

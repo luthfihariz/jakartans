@@ -34,7 +34,10 @@ public class LoginWithFacebookTask extends AsyncTask<String, Void, JSONObject> {
 		if (result != null) {
 			try {
 				boolean status = result.getBoolean("status");
-				completeListener.onCompleted(status, null);
+				if(status){
+					int userId = result.getJSONObject("user").getInt("id");
+					completeListener.onCompleted(status, userId);
+				}				
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

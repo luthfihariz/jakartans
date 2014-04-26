@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 public class Api {
 
-	private static String DOMAIN = "http://172.16.6.15/";
+	private static String DOMAIN = "http://172.16.6.15";
 	private static String HOST_NAME = DOMAIN + "/hackjack";
 	private static String HOST_NAME_API = HOST_NAME + "/api";
 	private static String USERS_API = HOST_NAME_API + "/users";
