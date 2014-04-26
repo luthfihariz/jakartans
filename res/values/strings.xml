@@ -17,6 +17,7 @@
     <!-- trayek list activity -->
     <string name="rating">Rating</string>
     <string name="rute_trayek">Rute Trayek</string>
+    <string name="time">Waktu</string>
 
     <!-- dialog update info -->
     <string name="update_status">Buat Status</string>
