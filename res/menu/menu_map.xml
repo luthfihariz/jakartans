@@ -4,14 +4,8 @@
     tools:context="com.jakartans.ac.SearchActivity" >
 
     <item
-        android:id="@+id/item_info"
+        android:id="@+id/item_map"
 		android:title="@string/info"
-        android:showAsAction="always"
-        android:icon="@drawable/ic_jakartans"/>
-    
-     <item
-        android:id="@+id/item_update_info"
-        android:title="@string/update_info"
         android:showAsAction="always"
         android:icon="@drawable/ic_jakartans"/>
 

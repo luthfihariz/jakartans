@@ -1,11 +1,7 @@
 package com.jakartans.adapter;
 
+
 import java.util.ArrayList;
-
-import com.jakartans.R;
-import com.jakartans.beans.Trayek;
-import com.luthfihariz.utilities.Helper;
-
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,6 +12,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.jakartans.R;
+import com.jakartans.beans.Trayek;
+import com.luthfihariz.utilities.Helper;
 
 public class TrayekListAdapter extends BaseAdapter implements OnItemClickListener{
 
@@ -39,7 +39,7 @@ public class TrayekListAdapter extends BaseAdapter implements OnItemClickListene
 	}
 
 	@Override
-	public long getItemId(int position) {		
+	public long getItemId(int position) {
 		return position;
 	}
 
@@ -66,9 +66,8 @@ public class TrayekListAdapter extends BaseAdapter implements OnItemClickListene
 		holder.noTrayek.setText(trayek.getNoTrayek());
 		holder.ruteTrayek.setText(trayek.getNamaTrayek());
 		holder.overallRating.setText(""+trayek.getOverallRate());
-		
 		return view;
-	}	
+	}
 	
 	static class ViewHolder{
 		TextView jenisTrayek;
@@ -80,7 +79,7 @@ public class TrayekListAdapter extends BaseAdapter implements OnItemClickListene
 		ImageView iconBusRate;
 		ImageView iconBusAvailRate;
 	}
-
+	
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		Helper.log("click");

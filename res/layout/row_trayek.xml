@@ -10,7 +10,7 @@
 		android:layout_width="30dp"
 		android:layout_height="30dp"
 		android:contentDescription="@string/hello_world"
-		android:src="@drawable/ic_launcher" />
+		android:src="@drawable/ic_jakartans" />
 
 	<LinearLayout
 		android:id="@+id/ll_content"
@@ -28,18 +28,18 @@
 				android:id="@+id/tv_name_trayek"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textSize="16sp"
 				android:layout_margin="3dp"
 				android:text="@string/hello_world"
+				android:textSize="16sp"
 				android:textStyle="bold" />
 
 			<TextView
 				android:id="@+id/tv_no_trayek"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textSize="16sp"
 				android:layout_margin="2dp"
 				android:text="@string/hello_world"
+				android:textSize="16sp"
 				android:textStyle="bold" />
 		</LinearLayout>
 
@@ -68,21 +68,21 @@
 				android:layout_width="30dp"
 				android:layout_height="30dp"
 				android:contentDescription="@string/hello_world"
-				android:src="@drawable/ic_launcher" />
+				android:src="@drawable/ic_jakartans" />
 
 			<ImageView
 				android:id="@+id/iv_availability"
 				android:layout_width="30dp"
 				android:layout_height="30dp"
 				android:contentDescription="@string/hello_world"
-				android:src="@drawable/ic_launcher" />
+				android:src="@drawable/ic_jakartans" />
 
 			<ImageView
 				android:id="@+id/iv_jamming"
 				android:layout_width="30dp"
 				android:layout_height="30dp"
 				android:contentDescription="@string/hello_world"
-				android:src="@drawable/ic_launcher" />
+				android:src="@drawable/ic_jakartans" />
 		</LinearLayout>
 
 		<TextView

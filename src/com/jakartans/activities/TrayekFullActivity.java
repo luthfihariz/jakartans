@@ -3,13 +3,14 @@ package com.jakartans.activities;
 import android.os.Bundle;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.jakartans.R;
 
 public class TrayekFullActivity extends SherlockActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_update_status);
+		setContentView(R.layout.activity_trayek_full);
 	}
 
 	/*@Override

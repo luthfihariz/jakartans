@@ -2,14 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:padding="10dp"
     android:orientation="vertical"
     tools:context="com.jakartans.activities.SearchActivity" >
     
     <EditText 
         android:id="@+id/et_name_trayek"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -28,13 +26,11 @@
         android:id="@+id/seek_jamming"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:progress="3"
         android:secondaryProgress="1"/>
     
     <TextView 
         android:id="@+id/tv_fluent"
-        android:layout_margin="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -45,13 +41,11 @@
         android:id="@+id/seek_fluent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:progress="3"
         android:secondaryProgress="1"/>
     
     <TextView 
         android:id="@+id/tv_availability"
-        android:layout_margin="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -62,15 +56,12 @@
         android:id="@+id/seek_availability"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:progress="3"
         android:secondaryProgress="1"/>
     
     <EditText 
         android:id="@+id/et_update_info"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

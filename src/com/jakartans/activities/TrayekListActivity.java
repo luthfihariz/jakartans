@@ -28,12 +28,19 @@ import com.luthfihariz.utilities.Api;
 public class TrayekListActivity extends SherlockActivity {
 
 	AlertDialogManager alertDialogManager;
+	SeekBar seekBarJamming;
+	SeekBar seekBarFluent;
+	SeekBar seekBarAvailibility;
+	EditText etNameTrayek;
+	EditText etUpdateInfo;
 	View view;
 	LayoutInflater layoutInflater;
+	
 	private String from, to;
 	private ListView trayekList;
 	private ProgressBar progressBar;
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
