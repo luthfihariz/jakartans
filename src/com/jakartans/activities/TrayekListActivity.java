@@ -136,7 +136,7 @@ public class TrayekListActivity extends SherlockActivity {
 
 				viewHolder.etNameTrayek = (EditText) view.findViewById(R.id.et_name_trayek);
 				viewHolder.seekBarAvailibility = (SeekBar) view.findViewById(R.id.seek_availability);
-				viewHolder.seekBarFluent = (SeekBar) view.findViewById(R.id.seek_fluent);
+				viewHolder.seekBarFluent = (SeekBar) view.findViewById(R.id.seek_bus);
 				viewHolder.seekBarJamming = (SeekBar) view.findViewById(R.id.seek_jamming);
 				viewHolder.etUpdateInfo = (EditText) view.findViewById(R.id.et_update_info);
 

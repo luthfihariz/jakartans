@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		session = new SessionManager(this);
-		session.clearSession();
+		//session.clearSession();
 		if (session.isLoggedIn())
 			gotoSearchActivity();
 

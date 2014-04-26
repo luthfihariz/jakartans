@@ -15,7 +15,6 @@
     
     <TextView 
         android:id="@+id/tv_jamming"
-        android:layout_margin="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,11 +25,20 @@
         android:id="@+id/seek_jamming"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:progress="3"
-        android:secondaryProgress="1"/>
+        android:max="2"
+        android:progress="0"
+       />
     
     <TextView 
-        android:id="@+id/tv_fluent"
+        android:id="@+id/tv_jamming_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/jamming"
+        android:hint="@string/jamming"/>
+    
+    <TextView 
+        android:id="@+id/tv_bus"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,11 +46,19 @@
         android:hint="@string/jamming"/>
     
     <SeekBar 
-        android:id="@+id/seek_fluent"
+        android:id="@+id/seek_bus"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:progress="3"
-        android:secondaryProgress="1"/>
+        android:max="2"
+        android:progress="0"/>
+    
+    <TextView 
+        android:id="@+id/tv_bus_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/fluent"
+        android:hint="@string/jamming"/>
     
     <TextView 
         android:id="@+id/tv_availability"
@@ -56,8 +72,16 @@
         android:id="@+id/seek_availability"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:progress="3"
-        android:secondaryProgress="1"/>
+        android:max="2"
+        android:progress="0"/>
+    
+    <TextView 
+        android:id="@+id/tv_availability_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/availability"
+        android:hint="@string/jamming"/>
     
     <EditText 
         android:id="@+id/et_update_info"
