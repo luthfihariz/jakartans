@@ -1,5 +1,7 @@
 package com.luthfihariz.utilities;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,6 +10,9 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.regex.Pattern;
+
+import org.json.JSONObject;
+import org.xml.sax.InputSource;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -79,6 +84,24 @@ public class Helper {
 		Date time = new Date(unixTimeInMillis * 1000);
 		String timeString = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(time);
 		return timeString;
+	}
+	
+	public static JSONObject getAllRoutes(Context context){
+		JSONObject routeJson;
+		String json = null;
+		try{
+			InputStream is = context.getAssets().open("routes.json");
+			int size = is.available();
+			byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+            routeJson = new JSONObject(json);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+		return routeJson;
 	}
 
 	public static String md5hash(String string) {
