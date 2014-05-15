@@ -25,6 +25,7 @@ import com.jakartans.adapter.TrayekListAdapter;
 import com.jakartans.beans.Trayek;
 import com.luthfihariz.utilities.AlertDialogManager;
 import com.luthfihariz.utilities.Api;
+import com.luthfihariz.utilities.Helper;
 
 public class TrayekListActivity extends SherlockActivity {
 
@@ -104,7 +105,7 @@ public class TrayekListActivity extends SherlockActivity {
 							trayek.setAvgTrafficRate(avgRate.getInt("trafficRate"));
 							trayek.setAvgBusRate(avgRate.getInt("bussRate"));
 							trayek.setAvgBusAvailRate(avgRate.getInt("bussAvailRate"));
-						}
+						}						
 						trayeks.add(trayek);						
 					}
 					

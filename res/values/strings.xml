@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+	<!-- dialog update info -->	
+
+	<!-- Feel it Trayek In Jakarta -->	
+	<string name="fb_app_id">1375363132750605</string>
+
 	<string name="app_name">Jakartans</string>
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
@@ -9,7 +15,7 @@
 	<string name="title_activity_search">SearchActivity</string>
 	<string name="from">Dari</string>
 	<string name="destination">Tujuan</string>
-	<string name="search">Cari</string>
+	<string name="search">CARI</string>
 
 	<!-- profile activity -->
 
@@ -17,6 +23,7 @@
 	<!-- trayek list activity -->
 	<string name="rating">Rating</string>
 	<string name="rute_trayek">Rute Trayek</string>
+	<string name="time">Waktu</string>
 
 	<!-- dialog update info -->
 	<string name="update_status">Buat Status</string>
@@ -27,46 +34,12 @@
 
 	<!-- Feel it Trayek In Jakarta -->
 	<string name="quiet">Sepi</string>
-	<string name="fluent">Kepadatan Penumpang</string>
+	<string name="fluent">Lancar</string>
 	<string name="jamming">Kemacetan</string>
 	<string name="availability">Ketersediaan Kendaraan</string>
-	<string name="fb_app_id">1375363132750605</string>
 	<string name="title_activity_trayek_list">TrayekListActivity</string>
 	<string name="title_activity_profil">ProfilActivity</string>
 	<string name="title_activity_update_status">UpdateStatusActivity</string>
-	<string name="app_name">Jakartans</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
-    <!-- search activity -->
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="from">Dari</string>
-    <string name="destination">Tujuan</string>
-    <string name="search">Cari</string>
-
-    <!-- profile activity -->
-
-
-    <!-- trayek list activity -->
-    <string name="rating">Rating</string>
-    <string name="rute_trayek">Rute Trayek</string>
-    <string name="time">Waktu</string>
-
-    <!-- dialog update info -->
-    <string name="update_status">Buat Status</string>
-    <string name="update_info">Perbaruhi Info</string>
-    <string name="update">Perbaruhi</string>
-    <string name="name_trayek">Nama Trayek</string>
-    <string name="info">Info</string>
-
-    <!-- Feel it Trayek In Jakarta -->
-    <string name="quiet">Sepi</string>
-    <string name="fluent">Lancar</string>
-    <string name="jamming">Kemacetan</string>
-    <string name="availability">Ketersediaan Kendaraan</string>
-    <string name="title_activity_trayek_list">TrayekListActivity</string>
-    <string name="title_activity_profil">ProfilActivity</string>
-    <string name="title_activity_update_status">UpdateStatusActivity</string>
-    <string name="title_activity_trayek_map">TrayekMapActivity</string>
+	<string name="title_activity_trayek_map">TrayekMapActivity</string>
 
 </resources>

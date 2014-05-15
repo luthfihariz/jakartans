@@ -12,7 +12,7 @@
 	    android:layout_height="30dp"
 	    android:layout_margin="3dp"
 	    android:contentDescription="@string/hello_world"
-	    android:src="@drawable/ic_jakartans"/>
+	    android:src="@drawable/ic_jakartans_placeholder"/>
         
     <LinearLayout 
         android:id="@+id/ll_content"

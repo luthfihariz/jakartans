@@ -50,7 +50,7 @@ public class SearchActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
-		
+
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setIcon(R.drawable.ic_jakartans_with_text);
 		actionBar.setDisplayShowTitleEnabled(false);
@@ -220,7 +220,7 @@ public class SearchActivity extends SherlockActivity {
 				Helper.getNoRoutes(this));
 		etNameTrayek.setAdapter(adapter);
 		etNameTrayek.setThreshold(1);
-		
+
 		alertDialogManager = new AlertDialogManager();
 		alertDialogManager.showDialog(SearchActivity.this, "Update Informasi", view,
 				new DialogInterface.OnClickListener() {
@@ -232,8 +232,8 @@ public class SearchActivity extends SherlockActivity {
 						int trafficRate = (seekBarJamming.getProgress() - 3) * -1;
 						int busRate = (seekBarBus.getProgress() - 3) * -1;
 						int availRate = (seekBarAvailibility.getProgress() - 3) * -1;
-						updateInfo.execute(String.valueOf(noTrayek), etUpdateInfo
-								.getText().toString(), String.valueOf(trafficRate), String.valueOf(busRate),
+						updateInfo.execute(String.valueOf(noTrayek), etUpdateInfo.getText().toString(),
+								String.valueOf(trafficRate), String.valueOf(busRate),
 								String.valueOf(availRate));
 
 					}
@@ -242,20 +242,20 @@ public class SearchActivity extends SherlockActivity {
 
 	private class UpdateInfoTask extends AsyncTask<String, Void, JSONObject> {
 
-		private ProgressDialog dialog; 
-		
+		private ProgressDialog dialog;
+
 		@Override
 		protected void onPreExecute() {
 			dialog = Helper.buildProgressDialog(SearchActivity.this, "Please wait.", false);
 			dialog.show();
 		}
-		
+
 		@Override
 		protected JSONObject doInBackground(String... params) {
 			int userId = new SessionManager(SearchActivity.this).getMemberId();
 			try {
-				return Api.updateStatus(userId, params[0], params[1], params[2], params[3], params[4], 0.0,
-						0.0);
+				return Api.updateStatus(userId, params[0], params[1], params[2], params[3], params[4],
+						-6.222281, 106.847996);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -265,7 +265,8 @@ public class SearchActivity extends SherlockActivity {
 		@Override
 		protected void onPostExecute(JSONObject result) {
 			dialog.dismiss();
-			if (result != null) {}
+			if (result != null) {
+			}
 		}
 
 	}

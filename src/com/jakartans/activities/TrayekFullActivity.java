@@ -159,6 +159,7 @@ public class TrayekFullActivity extends SherlockActivity {
 
 	private void showMap() {
 		Intent intent = new Intent(this, TrayekMapActivity.class);
+		Helper.log("before Intent : "+hackjackId);
 		intent.putExtra("hackjakId", hackjackId);
 		startActivity(intent);
 	}

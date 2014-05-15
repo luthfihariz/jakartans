@@ -4,12 +4,16 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:overScrollMode="always"
+	android:background="#ededed"
 	tools:context="com.jakartans.activities.TrayekListActivity" >
 
 	<ListView
 		android:id="@+id/lv_trayek"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
+		android:background="#ededed"
+		android:dividerHeight="0dp"
+		android:divider="@android:color/transparent"
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentTop="true" />
 

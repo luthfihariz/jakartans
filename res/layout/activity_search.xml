@@ -2,31 +2,86 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:padding="20dp"
+	android:background="@drawable/bg_pilih_trayek"
 	android:orientation="vertical"
+	android:padding="20dp"
 	tools:context="com.jakartans.activities.SearchActivity" >
 
-	<AutoCompleteTextView
-		android:id="@+id/et_from"
-		android:layout_width="fill_parent"
+	<ImageView
+		android:id="@+id/imageView1"
+		android:layout_width="268dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="100dp"
-		android:hint="@string/from"
-		android:text="" />
+		android:layout_gravity="center_horizontal"
+		android:layout_marginBottom="10dp"
+		android:src="@drawable/ic_enjoy_jakarta" />
 
-	<AutoCompleteTextView
-		android:id="@+id/et_destination"
+	<RelativeLayout
+		android:id="@+id/form_container"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-		android:hint="@string/destination"
-		android:text="" />
+		android:orientation="vertical" >
 
-	<Button
-		android:id="@+id/btn_search"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-		android:hint="@string/search" />
+		<LinearLayout
+			android:id="@+id/from"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_below="@+id/textView1"
+			android:background="#55333333"
+			android:orientation="vertical"
+			android:paddingBottom="20dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"
+			android:paddingTop="20dp" >
+
+			<AutoCompleteTextView
+				android:id="@+id/et_from"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ccffffff"
+				android:hint="@string/from"
+				android:padding="10dp"
+				android:text=""
+				/>
+
+			<AutoCompleteTextView
+				android:id="@+id/et_destination"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:background="#ccffffff"
+				android:hint="@string/destination"
+				android:padding="10dp"
+				android:text=""
+				/>
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/textView1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="-10dp"
+			android:background="@color/orange"
+			android:paddingBottom="10dp"
+			android:paddingLeft="20dp"
+			android:paddingRight="20dp"
+			android:paddingTop="10dp"
+			android:text="PILIH TRAYEK"
+			android:textColor="#FFF" />
+
+		<Button
+			android:id="@+id/btn_search"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_below="@+id/from"
+			android:layout_marginTop="20dp"
+			android:background="@color/orange"
+			android:text="CARI"
+			android:textColor="@android:color/white"
+			android:textSize="20sp"
+			android:textStyle="bold" />
+	</RelativeLayout>
 
 </LinearLayout>
